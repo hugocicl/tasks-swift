@@ -308,6 +308,7 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 /* End PBXVariantGroup section */
 
@@ -431,6 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8H37JRB2HX;
 				INFOPLIST_FILE = tasks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -439,7 +441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.franciscopronto.tasks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -448,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8H37JRB2HX;
 				INFOPLIST_FILE = tasks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,7 +459,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.franciscopronto.tasks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
