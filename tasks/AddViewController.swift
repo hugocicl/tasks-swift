@@ -158,7 +158,7 @@ class AddViewController: UIViewController,UIPickerViewDelegate, UIPickerViewData
                 itemList!.add(dataSet)
                 userDefaults.set(itemList,forKey: "itemList")
             }
-            userDefaults.synchronize()
+            UserDefaults.standard.synchronize()
             self.navigationController?.popToRootViewController(animated: true)
         }
     }

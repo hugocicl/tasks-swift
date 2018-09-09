@@ -33,25 +33,12 @@ class editViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDa
     
     @IBAction func editItem(_ sender: Any) {
         
-        var userDefaults:UserDefaults = UserDefaults.standard
-        var itemList:NSMutableArray? = userDefaults.object(forKey: "itemList") as? NSMutableArray
         
-        let mutableItemList: NSMutableArray = NSMutableArray()
-        for dict:Any in itemList!{
-            mutableItemList.add(dict as! NSDictionary)
-        }
-        mutableItemList.remove(taskData)
-        
-        userDefaults.removeObject(forKey: "itemList")
-        userDefaults.set(mutableItemList, forKey:"itemList")
-        userDefaults.synchronize()
         
         if(titleTask.text != "")
         {
-            //            endDateTask.datePickerMode = UIDatePickerMode.date
-            //            let dateFormatter = DateFormatter()
-            //            dateFormatter.dateFormat = "dd MMM yyyy"
-            //            let selectedDate = dateFormatter.string(from:endDateTask.date)
+            var userDefaults:UserDefaults = UserDefaults.standard
+            var itemList:NSMutableArray? = userDefaults.object(forKey: "itemList") as? NSMutableArray
             
             let dataSet:NSMutableDictionary = NSMutableDictionary()
             dataSet.setObject(titleTask.text, forKey: "itemTitle" as NSCopying)
@@ -64,17 +51,13 @@ class editViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDa
                 for dict:Any in itemList!{
                     nmList.add(dict as! NSDictionary)
                 }
+                nmList.remove(taskData)
                 userDefaults.removeObject(forKey: "itemList")
                 nmList.add(dataSet)
                 userDefaults.set(nmList, forKey: "itemList")
                 
-            }else{
-                userDefaults.removeObject(forKey: "itemList")
-                itemList = NSMutableArray()
-                itemList!.add(dataSet)
-                userDefaults.set(itemList,forKey: "itemList")
             }
-            userDefaults.synchronize()
+            UserDefaults.standard.synchronize()
             self.navigationController?.popToRootViewController(animated: true)
         }
     }

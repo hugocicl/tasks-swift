@@ -76,10 +76,12 @@ class FirstViewControllerTableViewController: UITableViewController{
             // Delete the row from the data source
             let userDefaults:UserDefaults = UserDefaults.standard
             
-            let itemListArray:NSMutableArray = userDefaults.object(forKey: "itemList") as! NSMutableArray
+            let itemListArray:NSMutableArray? = userDefaults.object(forKey: "itemList") as? NSMutableArray
+            if(itemListArray != nil){
+                
             
             let mutableItemList: NSMutableArray = NSMutableArray()
-            for dict:Any in itemListArray{
+            for dict:Any in itemListArray!{
                 mutableItemList.add(dict as! NSDictionary)
             }
             mutableItemList.remove(taskList.object(at: indexPath.row))
@@ -91,7 +93,7 @@ class FirstViewControllerTableViewController: UITableViewController{
             taskList=mutableItemList
             
             self.myTableView.reloadData()
-            
+            }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
